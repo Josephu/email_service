@@ -14,7 +14,7 @@ sourceMapSupport.install();
 export const app = express();
 
 app.use(bodyParser.json());
-app.get('/', (_, res) => res.send("email API working"));
+app.get("/", (_, res) => res.send("email API working"));
 
 setupSwaggerAndSetupRoutes();
 

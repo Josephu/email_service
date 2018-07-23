@@ -5,8 +5,8 @@ import { logger } from "./infrastructure/logger";
 export interface EmailPayload {
   sender: string;
   recipients: string[];
-  cc_recipients: string[];
-  bcc_recipients: string[];
+  cc_recipients?: string[];
+  bcc_recipients?: string[];
   subject: string;
   content: string;
 }

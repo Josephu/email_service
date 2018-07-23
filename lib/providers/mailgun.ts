@@ -7,19 +7,28 @@ const API_KEY = config.get<string>("providers.mailgun.secret");
 const DOMAIN = config.get<string>("providers.mailgun.domain");
 
 export async function sendEmail(payload: EmailPayload) {
-  const options = {
+  const options: any = {
     method: "POST",
     uri: `https://api:${API_KEY}@api.mailgun.net/v3/${DOMAIN}/messages`,
-    form: {
-      from: payload.sender,
-      to: payload.recipients.join(","),
-      cc: payload.cc_recipients.join(","),
-      bcc: payload.bcc_recipients.join(","),
-      subject: payload.subject,
-      text: payload.content
-    }
+    form: buildEmailBody(payload)
   };
 
   const response = await rp(options);
   logger.info(response);
+}
+
+export function buildEmailBody(payload: EmailPayload) {
+  const body: any = {
+    from: payload.sender,
+    to: payload.recipients.join(","),
+    subject: payload.subject,
+    text: payload.content
+  };
+  if (payload.cc_recipients && payload.cc_recipients.length > 0) {
+    body.cc = payload.cc_recipients.join(",");
+  }
+  if (payload.bcc_recipients && payload.bcc_recipients.length > 0) {
+    body.bcc = payload.bcc_recipients.join(",");
+  }
+  return body;
 }
