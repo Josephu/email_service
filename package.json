@@ -1,0 +1,37 @@
+{
+  "name": "emailchallenge",
+  "version": "1.0.0",
+  "description": "Email service",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Jimmy Wong",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/config": "0.0.34",
+    "@types/express": "^4.16.0",
+    "@types/source-map-support": "^0.4.1",
+    "@types/supertest": "^2.0.5",
+    "@types/swagger-tools": "^0.10.6",
+    "body-parser": "^1.18.3",
+    "bull": "^3.4.4",
+    "config": "^1.30.0",
+    "express": "^4.16.3",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "source-map-support": "^0.5.6",
+    "swagger-tools": "^0.10.4",
+    "sway": "^2.0.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/request-promise": "^4.1.42",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0",
+    "typescript": "^2.9.2"
+  }
+}

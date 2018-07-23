@@ -1,0 +1,21 @@
+# Logs
+logs
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Excluding VSCode config files
+.vscode/*
+
+*.js
+*.js.map
+scripts
+config/local.yaml

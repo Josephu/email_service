@@ -1,0 +1,80 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: email service
+basePath: /
+consumes:
+  - application/json
+produces:
+  - application/json
+definitions:
+  Send_Email_Request:
+    type: object
+    properties:
+      recipients:
+        type: array
+        minLength: 1
+        items:
+          type: string
+          description: email address of the sender
+          example: 'imagegospel@gmail.com'
+          minLength: 1
+      cc_recipients:
+        type: array
+        minLength: 1
+        items:
+          type: string
+          description: email address of the sender
+          example: 'imagegospel@gmail.com'
+          minLength: 1
+      bcc_recipients:
+        type: array
+        minLength: 1
+        items:
+          type: string
+          description: email address of the sender
+          example: 'imagegospel@gmail.com'
+          minLength: 1
+      sender:
+        type: string
+        description: email address of the sender
+        example: 'imagegospel@gmail.com'
+        minLength: 1
+      subject:
+        type: string
+        description: The subject of the email
+        example: 'Hey there!'
+      content:
+        type: string
+        description: The content of email in plain text
+        example: 'This is an example email'
+    required:
+    - recipients
+    - sender
+    - subject
+    - content
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      description:
+        type: string
+paths:
+  /send_email:
+    post:
+      summary: send a batch of emails
+      parameters:
+      - name: scheduled jobs
+        in: body
+        description: Body of an array of email payload
+        schema:
+          $ref: '#/definitions/Send_Email_Request'
+      responses:
+        201:
+          description: scheduled job contract
+        400:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
