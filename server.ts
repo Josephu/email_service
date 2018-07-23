@@ -2,10 +2,11 @@ import { logger } from "./lib/infrastructure/logger";
 import { app } from "./lib/app";
 import * as Queue from "bull";
 import { scheduledJobQueue, handleJob } from "./lib/queue_processor";
+import * as config from 'config';
 
 // HTTP API Server
 const environment = process.env.NODE_ENV;
-const port = 3000;
+const port = config.get<number>('port') || 3000;
 
 logger.info("initialising`api server...");
 

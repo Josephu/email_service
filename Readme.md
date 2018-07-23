@@ -19,7 +19,7 @@ npm run start
 ```
 
 ## Try API out through swagger
-http://54.206.106.116:3000/docs
+http://13.236.179.166/docs
 
 ## Run test
 ```
