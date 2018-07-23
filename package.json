@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha test",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "author": "Jimmy Wong",
   "license": "ISC",
