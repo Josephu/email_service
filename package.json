@@ -4,11 +4,13 @@
   "description": "Email service",
   "main": "server.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "build": "tsc"
   },
   "author": "Jimmy Wong",
   "license": "ISC",
   "dependencies": {
+    "@types/bull": "^3.3.15",
     "@types/chai": "^4.1.4",
     "@types/config": "0.0.34",
     "@types/express": "^4.16.0",
@@ -19,6 +21,7 @@
     "bull": "^3.4.4",
     "config": "^1.30.0",
     "express": "^4.16.3",
+    "nodemon": "^1.18.3",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "source-map-support": "^0.5.6",
